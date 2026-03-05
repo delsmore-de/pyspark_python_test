@@ -13,9 +13,11 @@ A repo for practicing pyspark in python
    - Run `java -version` to verify
    - If you are runing into issues, try restarting your terminal
 4. Install git
-5. Install venv/uv/anaconda
-   - I recoomend UV
+5. Install uv/venv/anaconda
+   - project was setup in uv `brew install uv`
 6. clone repo and create virtual env
-   - ex:
+   - ex: `uv sync`
+7. Update code to add transformations
+  - run locally with `uv run main.py`
 
     
