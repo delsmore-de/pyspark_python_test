@@ -4,12 +4,14 @@ import os
 import shutil
 import tempfile
 
-
+def warehouse_path():
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    temp_dir = os.path.join(cwd, "spark_temp")
+    return temp_dir
 
 def create_delta_spark_session():
     """Creates a SparkSession with Delta Lake support. This session is configured to use a temporary warehouse directory for Delta Lake storage."""
-    cwd = os.path.abspath(os.path.dirname(__file__))
-    temp_dir = os.path.join(cwd, "spark_temp")
+    temp_dir = warehouse_path()
     os.makedirs(temp_dir, exist_ok=True)
     warehouse_dir = tempfile.mkdtemp(dir=temp_dir)
 
@@ -29,4 +31,4 @@ def create_delta_spark_session():
 def stop_spark_session(spark_session):
     """Stops the given SparkSession and cleans up the temporary warehouse directory used for Delta Lake storage."""
     spark_session.stop()
-    shutil.rmtree(temp_dir, ignore_errors=True)
+    shutil.rmtree(warehouse_path(), ignore_errors=True)
