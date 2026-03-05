@@ -1,0 +1,13 @@
+[project]
+name = "pyspark-python-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "delta>=0.4.2",
+    "delta-core>=1.2.7",
+    "delta-spark>=4.1.0",
+    "pyspark>=4.1.1",
+    "pytest>=9.0.2",
+]
