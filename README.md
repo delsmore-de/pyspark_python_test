@@ -7,7 +7,7 @@ A repo for practicing with pyspark in python
 3. Install Java 17
    - ex:
             `brew install openjdk@17`
-   - .zshrc should have:
+   - you path should have:
 `export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"`
 `export JAVA_HOME=$(/usr/libexec/java_home -v 17)`
    - Run `java -version` to verify
@@ -22,10 +22,13 @@ A repo for practicing with pyspark in python
    - run pytests with `uv run pytest`
 
 ## contents
-/data contains both a csv and a parquet file of the iris dataset
-/pipeline contains the example pipeline class as well as its transformations
-/tests contains some example pytests
-/utils contains methods for creating a spark session
+  /data contains both a csv and a parquet file of the iris dataset
+  
+  /pipeline contains the example pipeline class as well as its transformations
+  
+  /tests contains some example pytests
+
+  /utils contains methods for creating a spark session
 
 ## Senarios
    1. There is a test case currently failing that is checking that the sepallength column is rounded to the nearest whole number. 
