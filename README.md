@@ -1,5 +1,5 @@
 # pyspark_python_test
-A repo for practicing pyspark in python
+A repo for practicing with pyspark in python
 
 ## General Macbook Setup:
 1. Install Visual Studio Code
@@ -18,6 +18,17 @@ A repo for practicing pyspark in python
 6. clone repo and create virtual env
    - ex: `uv sync`
 7. Update code to add transformations
-  - run locally with `uv run main.py`
+   - run locally with `uv run main.py`
+   - run pytests with `uv run pytest`
 
-    
+## contents
+/data contains both a csv and a parquet file of the iris dataset
+/pipeline contains the example pipeline class as well as its transformations
+/tests contains some example pytests
+/utils contains methods for creating a spark session
+
+## Senarios
+   1. There is a test case currently failing that is checking that the sepallength column is rounded to the nearest whole number. 
+   create a transformation that rounds this column and add it to the pipeline.
+   2. No output is given.  Add flat file output
+   3. When running this pipeline, a temporary instance of delta is created.  Create the transformations output as tables and export table data at the end of the pipeline run.

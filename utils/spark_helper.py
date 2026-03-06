@@ -17,8 +17,8 @@ def create_delta_spark_session():
 
     builder = (
         SparkSession.builder.appName("TestSpark")
-        .master("local[*]") #create local session; * for # of cpu cores as your machine has
-        .config("spark.jars.packages", "io.delta:delta-spark_2.12:3.3.1") #enables deltatable for the spark session locally
+        .master("local[*]")
+        .config("spark.jars.packages", "io.delta:delta-spark_2.12:3.3.1")
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
         .config("spark.sql.spark_catalog.warehousePath", warehouse_dir)
